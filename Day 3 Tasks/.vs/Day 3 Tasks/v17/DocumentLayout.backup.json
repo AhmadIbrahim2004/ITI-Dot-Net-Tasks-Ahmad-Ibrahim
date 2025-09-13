@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Day 3 Tasks\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{073A5ABA-FCB8-458D-A1E5-589BF71E5E1D}|Day 3 Tasks\\Day 3 Tasks.csproj|d:\\my obsidian\\my_life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\day 3 tasks\\day 3 tasks\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{073A5ABA-FCB8-458D-A1E5-589BF71E5E1D}|Day 3 Tasks\\Day 3 Tasks.csproj|solutionrelative:day 3 tasks\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Day 3 Tasks\\Day 3 Tasks\\Program.cs",
+              "RelativeDocumentMoniker": "Day 3 Tasks\\Program.cs",
+              "ToolTip": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Day 3 Tasks\\Day 3 Tasks\\Program.cs*",
+              "RelativeToolTip": "Day 3 Tasks\\Program.cs*",
+              "ViewState": "AgIAAMwAAAAAAAAAAAAYwMUAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-13T09:26:04.008Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
