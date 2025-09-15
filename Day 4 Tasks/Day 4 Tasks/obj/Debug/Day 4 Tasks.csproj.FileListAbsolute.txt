@@ -1,0 +1,7 @@
+D:\My Obsidian\My_Life\Courses\ITI DOT NET\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\Day 4 Tasks\Day 4 Tasks\obj\Debug\Day 4 Tasks.csproj.AssemblyReference.cache
+D:\My Obsidian\My_Life\Courses\ITI DOT NET\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\Day 4 Tasks\Day 4 Tasks\obj\Debug\Day 4 Tasks.csproj.CoreCompileInputs.cache
+D:\My Obsidian\My_Life\Courses\ITI DOT NET\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\Day 4 Tasks\Day 4 Tasks\bin\Debug\Day 4 Tasks.exe.config
+D:\My Obsidian\My_Life\Courses\ITI DOT NET\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\Day 4 Tasks\Day 4 Tasks\bin\Debug\Day 4 Tasks.exe
+D:\My Obsidian\My_Life\Courses\ITI DOT NET\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\Day 4 Tasks\Day 4 Tasks\bin\Debug\Day 4 Tasks.pdb
+D:\My Obsidian\My_Life\Courses\ITI DOT NET\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\Day 4 Tasks\Day 4 Tasks\obj\Debug\Day 4 Tasks.exe
+D:\My Obsidian\My_Life\Courses\ITI DOT NET\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\Day 4 Tasks\Day 4 Tasks\obj\Debug\Day 4 Tasks.pdb
