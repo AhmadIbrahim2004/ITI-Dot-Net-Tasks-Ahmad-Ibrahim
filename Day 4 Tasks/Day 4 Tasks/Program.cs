@@ -216,10 +216,17 @@ namespace Day_4_Tasks
         public override double Area() => width * height;
         public override void Draw()
         {
-            Console.WriteLine("     -----------     ");
-            Console.WriteLine("    |           |    ");
-            Console.WriteLine("    |           |    ");
-            Console.WriteLine("     -----------     ");
+            int w = (int)Math.Round(width);
+            int h = (int)Math.Round(height);
+            
+            Console.WriteLine(" " + new string('-', w));
+            
+            for (int i = 0; i < h; i++)
+            {
+                Console.WriteLine("|" + new string(' ', w) + "|");
+            }
+
+            Console.WriteLine(" " + new string('-', w));
         }
     }
 
