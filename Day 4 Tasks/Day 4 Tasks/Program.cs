@@ -30,6 +30,30 @@ namespace Day_4_Tasks
         }
     }
 
+    public static class IdGenerator
+    {
+        private static int _currentId = 0;
+        public static int GenerateId()
+        {
+            return ++_currentId;
+        }
+    }
+
+    public abstract class Person
+    {
+        public int Id { get; }
+        public string name { get; set; }
+        public int age { get; set; }
+
+        protected Person(string name, int age)
+        {
+            this.Id = IdGenerator.GenerateId();
+            this.name = name;
+            this.age = age;
+        }
+
+        public abstract void Introduce();
+    }
     public class Employee : Person
     {
         public List<Course> courses { get; } = new List<Course>();
@@ -42,21 +66,23 @@ namespace Day_4_Tasks
             {
                 courses.Add(course);
                 course.students.Add(this);
-                Console.WriteLine($"{this.name} (Employee) registered to course {course.name}.");
+                Console.WriteLine($"{this.name} registered to --> {course.name} <--.");
             }
         }
 
 
         public override void Introduce()
         {
-            Console.WriteLine($"Hi, I'm {this.name} (Employee). ID: {Id}");
+            Console.WriteLine($"Hi, I'm {this.name} (Employee). ID: {this.Id}");
         }
     }
 
     public class Engine
     {
         public string model { get; }
-        public Engine(string model) { this.model = model; }
+        public Engine(string model) {
+            this.model = model;
+        }
     }
 
     public class Car
@@ -66,25 +92,8 @@ namespace Day_4_Tasks
         public Car(string make, string engine_model)
         {
             this.make = make;
-            Engine = new Engine(engine_model);
+            this.Engine = new Engine(engine_model);
         }
-    }
-
-    public abstract class Person
-    {
-        public int Id { get; }
-        public string name { get; set; }
-        public int age { get; set; }
-
-
-        protected Person(string name, int age)
-        {
-            Id = IdGenerator.GenerateId(); 
-            this.name = name;
-            this.age = age;
-        }
-
-        public abstract void Introduce();
     }
 
     public class Instructor : Employee
@@ -92,18 +101,18 @@ namespace Day_4_Tasks
         public List<Course> teaching_courses { get; } = new List<Course>();
         public Instructor(string name, int age) : base(name, age) { }
 
-
         public void Teach(Course course)
         {
             course.Instructor = this;
+
             if (!teaching_courses.Contains(course)) teaching_courses.Add(course);
-            Console.WriteLine($"{this.name} assigned to teach {course.name}.");
+            Console.WriteLine($"{this.name} assigned to teach --> {course.name} <--");
         }
 
 
         public override void Introduce()
         {
-            Console.WriteLine($"Hello, I'm {name}, a teacher (Instructor). ID: {Id}");
+            Console.WriteLine($"Hello, I'm {this.name}, an Instructor. ID: {this.Id}");
         }
     }
 
@@ -123,21 +132,22 @@ namespace Day_4_Tasks
                 courses.Add(course);
                 course.students.Add(this);
 
+                Console.Write($"{this.name} registered to --> {course.name} <--");
+
                 switch (course.level)
                 {
                     case CourseLevel.Beginner:
-                        Console.WriteLine($"{this.name} registered to {course.name}: Good luck starting out!");
+                        Console.WriteLine(" Good luck starting out!");
                         break;
                     case CourseLevel.Intermediate:
-                        Console.WriteLine($"{this.name} registered to {course.name}: Nice — keep going!");
+                        Console.WriteLine(" Nice — keep going!");
                         break;
                     case CourseLevel.Advanced:
-                        Console.WriteLine($"{this.name}  registered to  {course.name}: This will be challenging!");
+                        Console.WriteLine(" This will be challenging!");
                         break;
                 }
             }
         }
-
 
         public Grade TotalGrades()
         {
@@ -151,7 +161,7 @@ namespace Day_4_Tasks
 
         public override void Introduce()
         {
-            Console.WriteLine($"Hi, I'm {this.name}, a learner (Student). ID: {this.Id}");
+            Console.WriteLine($"Hi, I'm {this.name}, a Student. ID: {this.Id}");
         }
     }
 
@@ -213,14 +223,7 @@ namespace Day_4_Tasks
         }
     }
 
-    public static class IdGenerator
-    {
-        private static int _currentId = 0;
-        public static int GenerateId()
-        {
-            return ++_currentId;
-        }
-    }
+    
 
     public class Grade
     {
@@ -238,18 +241,13 @@ namespace Day_4_Tasks
             return a.mark == b.mark;
         }
         public static bool operator !=(Grade a, Grade b) => !(a == b);
-
-
-        public override bool Equals(object obj) => obj is Grade g && g.mark == mark;
-        public override int GetHashCode() => mark.GetHashCode();
-        public override string ToString() => mark.ToString();
     }
     internal class Program
     {
         static void Main(string[] args)
         {
 
-            var company = new Company("TechCorp");
+            var company = new Company("Microsoft");
             var dev = new Department("Development");
             var hr = new Department("HR");
             company.Departments.Add(dev);
@@ -275,74 +273,81 @@ namespace Day_4_Tasks
             karim.Teach(cSharp);
             lina.Teach(algos);
             lina.Teach(advAI);
+            Console.WriteLine();
 
             omar.Register(cSharp);
             omar.Register(algos);
             Ahmad.Register(algos);
             Ahmad.Register(advAI);
             alice.Register(cSharp);
+            Console.WriteLine();
 
-            omar.grades.Add(new Grade(85));
+            omar.grades.Add(new Grade(78));
             omar.grades.Add(new Grade(90));
-            Ahmad.grades.Add(new Grade(78));
+            Ahmad.grades.Add(new Grade(85));
             Ahmad.grades.Add(new Grade(82));
 
-            var shapes = new List<Shape> { new Circle(2.5), new Rectangle(3, 4) };
-            Console.WriteLine(" -- - Shapes Demo-- - ");
+            var shapes = new List<Shape> { new Circle(3), new Rectangle(3, 4) };
+            Console.WriteLine(" ------------ Shapes Demo ------------ ");
             foreach (var s in shapes)
             {
                 Console.WriteLine($"Shape: {s.GetType().Name}, Area = {s.Area():F2}");
                 s.Draw();
                 Console.WriteLine();
             }
+            Console.WriteLine();
 
+            // s.GetType().Name --> method from the base class object
 
             var car = new Car("Toyota", "V6-2024");
             Console.WriteLine($"Car: {car.make}, Engine: {car.Engine.model}");
+            Console.WriteLine();
 
 
-            Console.WriteLine("-- - Introductions-- - ");
+            Console.WriteLine(" ------------ Introductions ------------ ");
             alice.Introduce();
             karim.Introduce();
             omar.Introduce();
+            Console.WriteLine();
 
 
-            Console.WriteLine(" -- - Employees & Their Departments & Courses-- - ");
+            Console.WriteLine(" ------------ Employees & Their Departments & Courses ------------ ");
             foreach (var d in company.Departments)
             {
                 foreach (var e in d.employees)
                 {
-                    var courseList = e.courses.Any()
-                    ? string.Join(", ", e.courses.Select(c => c.name))
-                    : "None";
+                    var courseList = e.courses.Any() ? string.Join(", ", e.courses.Select(c => c.name)) : "None";
                     Console.WriteLine($"Employee: {e.name} | Department: {d.name} | Courses: {courseList}");
                 }
             }
+            Console.WriteLine();
 
 
-            Console.WriteLine("-- - Students Report-- - ");
+            Console.WriteLine(" ------------ Students Report ------------ ");
             var students = new List<Student> { omar, Ahmad };
             foreach (var st in students)
             {
                 Console.WriteLine($"Student: {st.name} | Enrolled: {string.Join(", ", st.courses.Select(c => c.name))} | TotalGrades: {st.TotalGrades().mark}");
             }
+            Console.WriteLine();
 
 
-            Console.WriteLine("-- - Instructors Report-- - ");
+            Console.WriteLine(" ------------ Instructors Report ------------ ");
             var instructors = new List<Instructor> { karim, lina };
             foreach (var inst in instructors)
-            {
                 Console.WriteLine($"Instructor: {inst.name} | Teaches: {string.Join(", ", inst.teaching_courses.Select(c => c.name))}");
-            }
+            
+            Console.WriteLine();
 
 
-            Console.WriteLine(" -- - Departments Summary-- - ");
+            Console.WriteLine("------------ Departments Summary ------------ ");
             foreach (var dpt in company.Departments)
                 Console.WriteLine($"Department: {dpt.name} | Employee Count: {dpt.employees.Count}");
 
 
-            var g1 = new Grade(50);
-            var g2 = new Grade(50);
+            Console.WriteLine();
+            var g1 = new Grade(60);
+            var g2 = new Grade(40);
             Console.WriteLine($"Grade equality: g1 == g2 ? { (g1 == g2) } ");
             Console.WriteLine($"g1 + g2 = {(g1 + g2).mark}");
 
