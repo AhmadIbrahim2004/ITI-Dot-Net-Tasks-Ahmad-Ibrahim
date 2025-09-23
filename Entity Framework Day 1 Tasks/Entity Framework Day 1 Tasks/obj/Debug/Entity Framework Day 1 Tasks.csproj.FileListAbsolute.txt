@@ -1,0 +1,7 @@
+D:\My Obsidian\My_Life\Courses\ITI DOT NET\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\Entity Framework Day 1 Tasks\Entity Framework Day 1 Tasks\bin\Debug\Entity Framework Day 1 Tasks.exe.config
+D:\My Obsidian\My_Life\Courses\ITI DOT NET\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\Entity Framework Day 1 Tasks\Entity Framework Day 1 Tasks\bin\Debug\Entity Framework Day 1 Tasks.exe
+D:\My Obsidian\My_Life\Courses\ITI DOT NET\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\Entity Framework Day 1 Tasks\Entity Framework Day 1 Tasks\bin\Debug\Entity Framework Day 1 Tasks.pdb
+D:\My Obsidian\My_Life\Courses\ITI DOT NET\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\Entity Framework Day 1 Tasks\Entity Framework Day 1 Tasks\obj\Debug\Entity Framework Day 1 Tasks.csproj.AssemblyReference.cache
+D:\My Obsidian\My_Life\Courses\ITI DOT NET\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\Entity Framework Day 1 Tasks\Entity Framework Day 1 Tasks\obj\Debug\Entity Framework Day 1 Tasks.csproj.CoreCompileInputs.cache
+D:\My Obsidian\My_Life\Courses\ITI DOT NET\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\Entity Framework Day 1 Tasks\Entity Framework Day 1 Tasks\obj\Debug\Entity Framework Day 1 Tasks.exe
+D:\My Obsidian\My_Life\Courses\ITI DOT NET\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\Entity Framework Day 1 Tasks\Entity Framework Day 1 Tasks\obj\Debug\Entity Framework Day 1 Tasks.pdb
