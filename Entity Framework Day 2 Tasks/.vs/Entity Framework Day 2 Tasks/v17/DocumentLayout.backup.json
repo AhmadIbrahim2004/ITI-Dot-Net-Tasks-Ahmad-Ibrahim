@@ -1,0 +1,91 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Entity Framework Day 2 Tasks\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3AA4D647-F31F-4875-9304-8AA3EF87C273}|Entity Framework Day 2 Tasks\\Entity Framework Day 2 Tasks.csproj|d:\\my obsidian\\my_life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\entity framework day 2 tasks\\entity framework day 2 tasks\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3AA4D647-F31F-4875-9304-8AA3EF87C273}|Entity Framework Day 2 Tasks\\Entity Framework Day 2 Tasks.csproj|solutionrelative:entity framework day 2 tasks\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3AA4D647-F31F-4875-9304-8AA3EF87C273}|Entity Framework Day 2 Tasks\\Entity Framework Day 2 Tasks.csproj|d:\\my obsidian\\my_life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\entity framework day 2 tasks\\entity framework day 2 tasks\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3AA4D647-F31F-4875-9304-8AA3EF87C273}|Entity Framework Day 2 Tasks\\Entity Framework Day 2 Tasks.csproj|solutionrelative:entity framework day 2 tasks\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3AA4D647-F31F-4875-9304-8AA3EF87C273}|Entity Framework Day 2 Tasks\\Entity Framework Day 2 Tasks.csproj|d:\\my obsidian\\my_life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\entity framework day 2 tasks\\entity framework day 2 tasks\\repositories\\movierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3AA4D647-F31F-4875-9304-8AA3EF87C273}|Entity Framework Day 2 Tasks\\Entity Framework Day 2 Tasks.csproj|solutionrelative:entity framework day 2 tasks\\repositories\\movierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3AA4D647-F31F-4875-9304-8AA3EF87C273}|Entity Framework Day 2 Tasks\\Entity Framework Day 2 Tasks.csproj|d:\\my obsidian\\my_life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\entity framework day 2 tasks\\entity framework day 2 tasks\\repositories\\imovierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3AA4D647-F31F-4875-9304-8AA3EF87C273}|Entity Framework Day 2 Tasks\\Entity Framework Day 2 Tasks.csproj|solutionrelative:entity framework day 2 tasks\\repositories\\imovierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Entity Framework Day 2 Tasks\\Entity Framework Day 2 Tasks\\Form1.cs",
+              "RelativeDocumentMoniker": "Entity Framework Day 2 Tasks\\Form1.cs",
+              "ToolTip": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Entity Framework Day 2 Tasks\\Entity Framework Day 2 Tasks\\Form1.cs [Design]*",
+              "RelativeToolTip": "Entity Framework Day 2 Tasks\\Form1.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T18:09:09.307Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Entity Framework Day 2 Tasks\\Entity Framework Day 2 Tasks\\Form1.cs",
+              "RelativeDocumentMoniker": "Entity Framework Day 2 Tasks\\Form1.cs",
+              "ToolTip": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Entity Framework Day 2 Tasks\\Entity Framework Day 2 Tasks\\Form1.cs*",
+              "RelativeToolTip": "Entity Framework Day 2 Tasks\\Form1.cs*",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAswBwAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T18:04:06.28Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MovieRepository.cs",
+              "DocumentMoniker": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Entity Framework Day 2 Tasks\\Entity Framework Day 2 Tasks\\Repositories\\MovieRepository.cs",
+              "RelativeDocumentMoniker": "Entity Framework Day 2 Tasks\\Repositories\\MovieRepository.cs",
+              "ToolTip": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Entity Framework Day 2 Tasks\\Entity Framework Day 2 Tasks\\Repositories\\MovieRepository.cs",
+              "RelativeToolTip": "Entity Framework Day 2 Tasks\\Repositories\\MovieRepository.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAgwAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T17:36:15.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IMovieRepository.cs",
+              "DocumentMoniker": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Entity Framework Day 2 Tasks\\Entity Framework Day 2 Tasks\\Repositories\\IMovieRepository.cs",
+              "RelativeDocumentMoniker": "Entity Framework Day 2 Tasks\\Repositories\\IMovieRepository.cs",
+              "ToolTip": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Entity Framework Day 2 Tasks\\Entity Framework Day 2 Tasks\\Repositories\\IMovieRepository.cs",
+              "RelativeToolTip": "Entity Framework Day 2 Tasks\\Repositories\\IMovieRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T17:34:02.82Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
