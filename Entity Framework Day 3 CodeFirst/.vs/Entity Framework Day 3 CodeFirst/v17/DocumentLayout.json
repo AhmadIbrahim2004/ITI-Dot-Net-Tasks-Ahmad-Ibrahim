@@ -1,0 +1,142 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Entity Framework Day 3 CodeFirst\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6CA22F75-CDB7-4157-B0C5-F33F2A9A86D1}|Entity Framework Day 3 CodeFirst\\Entity Framework Day 3 CodeFirst.csproj|d:\\my obsidian\\my_life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\entity framework day 3 codefirst\\entity framework day 3 codefirst\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CA22F75-CDB7-4157-B0C5-F33F2A9A86D1}|Entity Framework Day 3 CodeFirst\\Entity Framework Day 3 CodeFirst.csproj|solutionrelative:entity framework day 3 codefirst\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CA22F75-CDB7-4157-B0C5-F33F2A9A86D1}|Entity Framework Day 3 CodeFirst\\Entity Framework Day 3 CodeFirst.csproj|d:\\my obsidian\\my_life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\entity framework day 3 codefirst\\entity framework day 3 codefirst\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6CA22F75-CDB7-4157-B0C5-F33F2A9A86D1}|Entity Framework Day 3 CodeFirst\\Entity Framework Day 3 CodeFirst.csproj|solutionrelative:entity framework day 3 codefirst\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CA22F75-CDB7-4157-B0C5-F33F2A9A86D1}|Entity Framework Day 3 CodeFirst\\Entity Framework Day 3 CodeFirst.csproj|d:\\my obsidian\\my_life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\entity framework day 3 codefirst\\entity framework day 3 codefirst\\repositories\\movierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CA22F75-CDB7-4157-B0C5-F33F2A9A86D1}|Entity Framework Day 3 CodeFirst\\Entity Framework Day 3 CodeFirst.csproj|solutionrelative:entity framework day 3 codefirst\\repositories\\movierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CA22F75-CDB7-4157-B0C5-F33F2A9A86D1}|Entity Framework Day 3 CodeFirst\\Entity Framework Day 3 CodeFirst.csproj|d:\\my obsidian\\my_life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\entity framework day 3 codefirst\\entity framework day 3 codefirst\\repositories\\imovierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CA22F75-CDB7-4157-B0C5-F33F2A9A86D1}|Entity Framework Day 3 CodeFirst\\Entity Framework Day 3 CodeFirst.csproj|solutionrelative:entity framework day 3 codefirst\\repositories\\imovierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Entity Framework Day 3 CodeFirst\\Entity Framework Day 3 CodeFirst\\Migrations\\20250925191410_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Entity Framework Day 3 CodeFirst\\Migrations\\20250925191410_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CA22F75-CDB7-4157-B0C5-F33F2A9A86D1}|Entity Framework Day 3 CodeFirst\\Entity Framework Day 3 CodeFirst.csproj|d:\\my obsidian\\my_life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\entity framework day 3 codefirst\\entity framework day 3 codefirst\\models\\theatrecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CA22F75-CDB7-4157-B0C5-F33F2A9A86D1}|Entity Framework Day 3 CodeFirst\\Entity Framework Day 3 CodeFirst.csproj|solutionrelative:entity framework day 3 codefirst\\models\\theatrecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CA22F75-CDB7-4157-B0C5-F33F2A9A86D1}|Entity Framework Day 3 CodeFirst\\Entity Framework Day 3 CodeFirst.csproj|d:\\my obsidian\\my_life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\entity framework day 3 codefirst\\entity framework day 3 codefirst\\models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CA22F75-CDB7-4157-B0C5-F33F2A9A86D1}|Entity Framework Day 3 CodeFirst\\Entity Framework Day 3 CodeFirst.csproj|solutionrelative:entity framework day 3 codefirst\\models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Entity Framework Day 3 CodeFirst\\Entity Framework Day 3 CodeFirst\\Form1.cs",
+              "RelativeDocumentMoniker": "Entity Framework Day 3 CodeFirst\\Form1.cs",
+              "ToolTip": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Entity Framework Day 3 CodeFirst\\Entity Framework Day 3 CodeFirst\\Form1.cs",
+              "RelativeToolTip": "Entity Framework Day 3 CodeFirst\\Form1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T19:26:19.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Entity Framework Day 3 CodeFirst\\Entity Framework Day 3 CodeFirst\\Form1.cs",
+              "RelativeDocumentMoniker": "Entity Framework Day 3 CodeFirst\\Form1.cs",
+              "ToolTip": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Entity Framework Day 3 CodeFirst\\Entity Framework Day 3 CodeFirst\\Form1.cs [Design]",
+              "RelativeToolTip": "Entity Framework Day 3 CodeFirst\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T18:42:03.529Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MovieRepository.cs",
+              "DocumentMoniker": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Entity Framework Day 3 CodeFirst\\Entity Framework Day 3 CodeFirst\\Repositories\\MovieRepository.cs",
+              "RelativeDocumentMoniker": "Entity Framework Day 3 CodeFirst\\Repositories\\MovieRepository.cs",
+              "ToolTip": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Entity Framework Day 3 CodeFirst\\Entity Framework Day 3 CodeFirst\\Repositories\\MovieRepository.cs",
+              "RelativeToolTip": "Entity Framework Day 3 CodeFirst\\Repositories\\MovieRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T19:18:15.608Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IMovieRepository.cs",
+              "DocumentMoniker": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Entity Framework Day 3 CodeFirst\\Entity Framework Day 3 CodeFirst\\Repositories\\IMovieRepository.cs",
+              "RelativeDocumentMoniker": "Entity Framework Day 3 CodeFirst\\Repositories\\IMovieRepository.cs",
+              "ToolTip": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Entity Framework Day 3 CodeFirst\\Entity Framework Day 3 CodeFirst\\Repositories\\IMovieRepository.cs",
+              "RelativeToolTip": "Entity Framework Day 3 CodeFirst\\Repositories\\IMovieRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T19:16:27.518Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20250925191410_InitialCreate.cs",
+              "DocumentMoniker": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Entity Framework Day 3 CodeFirst\\Entity Framework Day 3 CodeFirst\\Migrations\\20250925191410_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Entity Framework Day 3 CodeFirst\\Migrations\\20250925191410_InitialCreate.cs",
+              "ToolTip": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Entity Framework Day 3 CodeFirst\\Entity Framework Day 3 CodeFirst\\Migrations\\20250925191410_InitialCreate.cs",
+              "RelativeToolTip": "Entity Framework Day 3 CodeFirst\\Migrations\\20250925191410_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T19:14:10.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TheatreContext.cs",
+              "DocumentMoniker": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Entity Framework Day 3 CodeFirst\\Entity Framework Day 3 CodeFirst\\Models\\TheatreContext.cs",
+              "RelativeDocumentMoniker": "Entity Framework Day 3 CodeFirst\\Models\\TheatreContext.cs",
+              "ToolTip": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Entity Framework Day 3 CodeFirst\\Entity Framework Day 3 CodeFirst\\Models\\TheatreContext.cs",
+              "RelativeToolTip": "Entity Framework Day 3 CodeFirst\\Models\\TheatreContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T19:12:40.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Movie.cs",
+              "DocumentMoniker": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Entity Framework Day 3 CodeFirst\\Entity Framework Day 3 CodeFirst\\Models\\Movie.cs",
+              "RelativeDocumentMoniker": "Entity Framework Day 3 CodeFirst\\Models\\Movie.cs",
+              "ToolTip": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Entity Framework Day 3 CodeFirst\\Entity Framework Day 3 CodeFirst\\Models\\Movie.cs",
+              "RelativeToolTip": "Entity Framework Day 3 CodeFirst\\Models\\Movie.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T19:11:20.607Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
