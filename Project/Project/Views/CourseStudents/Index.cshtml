@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Project.Models.CourseStudent>
+@{
+    ViewData["Title"] = "Enrollments";
+}
+<h1>Enrollments</h1>
+<p><a asp-action="Create" class="btn btn-primary">Create New</a></p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Course)</th>
+            <th>@Html.DisplayNameFor(model => model.Student)</th>
+            <th>@Html.DisplayNameFor(model => model.Degree)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Course.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.Student.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.Degree)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-cId="@item.CrsId" asp-route-sId="@item.StdId">Edit</a> |
+                    <a asp-action="Details" asp-route-cId="@item.CrsId" asp-route-sId="@item.StdId">Details</a> |
+                    <a asp-action="Delete" asp-route-cId="@item.CrsId" asp-route-sId="@item.StdId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
