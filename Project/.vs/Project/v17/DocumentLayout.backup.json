@@ -1,48 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|d:\\my obsidian\\my_life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\project\\project\\views\\departments\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|solutionrelative:project\\views\\departments\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|d:\\my obsidian\\my_life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\project\\project\\views\\departments\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|solutionrelative:project\\views\\departments\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|d:\\my obsidian\\my_life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\project\\project\\views\\departments\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|solutionrelative:project\\views\\departments\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|d:\\my obsidian\\my_life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\project\\project\\views\\departments\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|solutionrelative:project\\views\\departments\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|d:\\my obsidian\\my_life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\project\\project\\views\\departments\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|solutionrelative:project\\views\\departments\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|d:\\my obsidian\\my_life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\project\\project\\views\\coursestudents\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|solutionrelative:project\\views\\coursestudents\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|d:\\my obsidian\\my_life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\project\\project\\views\\coursestudents\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|solutionrelative:project\\views\\coursestudents\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|d:\\my obsidian\\my_life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\project\\project\\views\\coursestudents\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|solutionrelative:project\\views\\coursestudents\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|d:\\my obsidian\\my_life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\project\\project\\views\\coursestudents\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|solutionrelative:project\\views\\coursestudents\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|d:\\my obsidian\\my_life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\project\\project\\views\\coursestudents\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|solutionrelative:project\\views\\coursestudents\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -50,141 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Views\\Departments\\Delete.cshtml",
-              "RelativeDocumentMoniker": "Project\\Views\\Departments\\Delete.cshtml",
-              "ToolTip": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Views\\Departments\\Delete.cshtml*",
-              "RelativeToolTip": "Project\\Views\\Departments\\Delete.cshtml*",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAwBQAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-29T18:43:06.703Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Views\\Departments\\Details.cshtml",
-              "RelativeDocumentMoniker": "Project\\Views\\Departments\\Details.cshtml",
-              "ToolTip": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Views\\Departments\\Details.cshtml*",
-              "RelativeToolTip": "Project\\Views\\Departments\\Details.cshtml*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-29T18:43:07.148Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Views\\Departments\\Edit.cshtml",
-              "RelativeDocumentMoniker": "Project\\Views\\Departments\\Edit.cshtml",
-              "ToolTip": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Views\\Departments\\Edit.cshtml*",
-              "RelativeToolTip": "Project\\Views\\Departments\\Edit.cshtml*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-29T18:42:52.111Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Views\\Departments\\Create.cshtml",
-              "RelativeDocumentMoniker": "Project\\Views\\Departments\\Create.cshtml",
-              "ToolTip": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Views\\Departments\\Create.cshtml*",
-              "RelativeToolTip": "Project\\Views\\Departments\\Create.cshtml*",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAwCkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-29T18:42:40.616Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Views\\Departments\\Index.cshtml",
-              "RelativeDocumentMoniker": "Project\\Views\\Departments\\Index.cshtml",
-              "ToolTip": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Views\\Departments\\Index.cshtml*",
-              "RelativeToolTip": "Project\\Views\\Departments\\Index.cshtml*",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAwCsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-29T18:42:10.435Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Views\\CourseStudents\\Delete.cshtml",
-              "RelativeDocumentMoniker": "Project\\Views\\CourseStudents\\Delete.cshtml",
-              "ToolTip": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Views\\CourseStudents\\Delete.cshtml",
-              "RelativeToolTip": "Project\\Views\\CourseStudents\\Delete.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAwBgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-29T18:41:16.605Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Views\\CourseStudents\\Details.cshtml",
-              "RelativeDocumentMoniker": "Project\\Views\\CourseStudents\\Details.cshtml",
-              "ToolTip": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Views\\CourseStudents\\Details.cshtml",
-              "RelativeToolTip": "Project\\Views\\CourseStudents\\Details.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAwBUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-29T18:41:04.468Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Views\\CourseStudents\\Edit.cshtml",
-              "RelativeDocumentMoniker": "Project\\Views\\CourseStudents\\Edit.cshtml",
-              "ToolTip": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Views\\CourseStudents\\Edit.cshtml",
-              "RelativeToolTip": "Project\\Views\\CourseStudents\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAwBkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-29T18:40:50.463Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Views\\CourseStudents\\Create.cshtml",
-              "RelativeDocumentMoniker": "Project\\Views\\CourseStudents\\Create.cshtml",
-              "ToolTip": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Views\\CourseStudents\\Create.cshtml",
-              "RelativeToolTip": "Project\\Views\\CourseStudents\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAwB8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-29T18:40:33.013Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Views\\CourseStudents\\Index.cshtml",
-              "RelativeDocumentMoniker": "Project\\Views\\CourseStudents\\Index.cshtml",
-              "ToolTip": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Views\\CourseStudents\\Index.cshtml",
-              "RelativeToolTip": "Project\\Views\\CourseStudents\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAwB8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-29T18:40:19.651Z",
-              "EditorCaption": ""
             }
           ]
         }

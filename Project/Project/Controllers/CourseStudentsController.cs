@@ -20,10 +20,19 @@ namespace Project.Controllers
         }
 
         // GET: CourseStudents
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            var applicationDbContext = _context.CourseStudents.Include(c => c.Course).Include(c => c.Student);
-            return View(await applicationDbContext.ToListAsync());
+            ViewData["CurrentFilter"] = searchString;
+            var courseStudents = from cs in _context.CourseStudents.Include(c => c.Course).Include(c => c.Student)
+                                 select cs;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                courseStudents = courseStudents.Where(cs => cs.Student.Name.Contains(searchString)
+                                                        || cs.Course.Name.Contains(searchString));
+            }
+
+            return View(await courseStudents.AsNoTracking().ToListAsync());
         }
 
         // GET: CourseStudents/Details/5
@@ -37,7 +46,7 @@ namespace Project.Controllers
             var courseStudent = await _context.CourseStudents
                 .Include(c => c.Course)
                 .Include(c => c.Student)
-                .FirstOrDefaultAsync(m => m.CrsId == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (courseStudent == null)
             {
                 return NotFound();
@@ -55,8 +64,6 @@ namespace Project.Controllers
         }
 
         // POST: CourseStudents/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Degree,CrsId,StdId")] CourseStudent courseStudent)
@@ -91,13 +98,11 @@ namespace Project.Controllers
         }
 
         // POST: CourseStudents/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Degree,CrsId,StdId")] CourseStudent courseStudent)
         {
-            if (id != courseStudent.CrsId)
+            if (id != courseStudent.Id)
             {
                 return NotFound();
             }
@@ -111,7 +116,7 @@ namespace Project.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CourseStudentExists(courseStudent.CrsId))
+                    if (!CourseStudentExists(courseStudent.Id))
                     {
                         return NotFound();
                     }
@@ -138,7 +143,7 @@ namespace Project.Controllers
             var courseStudent = await _context.CourseStudents
                 .Include(c => c.Course)
                 .Include(c => c.Student)
-                .FirstOrDefaultAsync(m => m.CrsId == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (courseStudent == null)
             {
                 return NotFound();
@@ -164,7 +169,8 @@ namespace Project.Controllers
 
         private bool CourseStudentExists(int id)
         {
-            return _context.CourseStudents.Any(e => e.CrsId == id);
+            return _context.CourseStudents.Any(e => e.Id == id);
         }
     }
 }
+

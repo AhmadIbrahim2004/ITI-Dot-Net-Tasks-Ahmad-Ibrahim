@@ -20,10 +20,18 @@ namespace Project.Controllers
         }
 
         // GET: Courses
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            var applicationDbContext = _context.Courses.Include(c => c.Department).Include(c => c.Instructor);
-            return View(await applicationDbContext.ToListAsync());
+            ViewData["CurrentFilter"] = searchString;
+            var courses = from c in _context.Courses.Include(c => c.Department).Include(c => c.Instructor)
+                          select c;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                courses = courses.Where(c => c.Name.Contains(searchString));
+            }
+
+            return View(await courses.AsNoTracking().ToListAsync());
         }
 
         // GET: Courses/Details/5
@@ -55,8 +63,6 @@ namespace Project.Controllers
         }
 
         // POST: Courses/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,Degree,MinimumDegree,Hours,DeptId,InstructorId")] Course course)
@@ -91,8 +97,6 @@ namespace Project.Controllers
         }
 
         // POST: Courses/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Degree,MinimumDegree,Hours,DeptId,InstructorId")] Course course)
@@ -168,3 +172,4 @@ namespace Project.Controllers
         }
     }
 }
+

@@ -20,10 +20,19 @@ namespace Project.Controllers
         }
 
         // GET: Students
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            var applicationDbContext = _context.Students.Include(s => s.Department);
-            return View(await applicationDbContext.ToListAsync());
+            ViewData["CurrentFilter"] = searchString;
+            var students = from s in _context.Students.Include(s => s.Department)
+                           select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                students = students.Where(s => s.Name.Contains(searchString)
+                                               || s.Department.Name.Contains(searchString));
+            }
+
+            return View(await students.AsNoTracking().ToListAsync());
         }
 
         // GET: Students/Details/5
@@ -53,8 +62,6 @@ namespace Project.Controllers
         }
 
         // POST: Students/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,Image,Address,Grade,DeptId")] Student student)
@@ -87,8 +94,6 @@ namespace Project.Controllers
         }
 
         // POST: Students/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Image,Address,Grade,DeptId")] Student student)
@@ -162,3 +167,4 @@ namespace Project.Controllers
         }
     }
 }
+

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Project.Models
 {
@@ -6,18 +7,19 @@ namespace Project.Models
     {
         public int Id { get; set; }
 
+        [Range(0, 100)]
         public int Degree { get; set; }
 
-        // Foreign Key for Course
         [ForeignKey("Course")]
+        [Display(Name = "Course")]
         public int CrsId { get; set; }
 
-        // Foreign Key for Student
         [ForeignKey("Student")]
+        [Display(Name = "Student")]
         public int StdId { get; set; }
 
         // Navigation Properties
-        public virtual Course Course { get; set; }
-        public virtual Student Student { get; set; }
+        public virtual Course? Course { get; set; }
+        public virtual Student? Student { get; set; }
     }
 }

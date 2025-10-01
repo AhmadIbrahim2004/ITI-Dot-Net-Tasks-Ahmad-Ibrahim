@@ -20,9 +20,19 @@ namespace Project.Controllers
         }
 
         // GET: Departments
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.Departments.ToListAsync());
+            ViewData["CurrentFilter"] = searchString;
+            var departments = from d in _context.Departments
+                              select d;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                departments = departments.Where(d => d.Name.Contains(searchString)
+                                               || d.ManagerName.Contains(searchString));
+            }
+
+            return View(await departments.AsNoTracking().ToListAsync());
         }
 
         // GET: Departments/Details/5
@@ -50,8 +60,6 @@ namespace Project.Controllers
         }
 
         // POST: Departments/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,ManagerName")] Department department)
@@ -82,8 +90,6 @@ namespace Project.Controllers
         }
 
         // POST: Departments/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,ManagerName")] Department department)
@@ -155,3 +161,4 @@ namespace Project.Controllers
         }
     }
 }
+

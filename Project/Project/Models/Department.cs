@@ -7,16 +7,18 @@ namespace Project.Models
     {
         public int Id { get; set; }
 
-        [Required]
-        [StringLength(50)]
+        [Required(ErrorMessage = "Department name is required.")]
+        [StringLength(50, MinimumLength = 3)]
         public string Name { get; set; }
 
+        [Required]
         [StringLength(50)]
+        [Display(Name = "Manager Name")]
         public string ManagerName { get; set; }
 
         // Navigation Properties
-        public virtual ICollection<Instructor> Instructors { get; set; } = new HashSet<Instructor>();
-        public virtual ICollection<Student> Students { get; set; } = new HashSet<Student>();
-        public virtual ICollection<Course> Courses { get; set; } = new HashSet<Course>();
+        public virtual ICollection<Instructor>? Instructors { get; set; }
+        public virtual ICollection<Student>? Students { get; set; }
+        public virtual ICollection<Course>? Courses { get; set; }
     }
 }
