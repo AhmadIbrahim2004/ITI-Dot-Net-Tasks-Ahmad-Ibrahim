@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|d:\\my obsidian\\my_life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\project\\project\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|solutionrelative:project\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|d:\\my obsidian\\my_life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\project\\project\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|solutionrelative:project\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +18,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "site.css",
+              "DocumentMoniker": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "Project\\wwwroot\\css\\site.css",
+              "ToolTip": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "Project\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAJIAAAAAAAAAAAAswLUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-01T14:11:44.916Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Project\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Project\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAwEUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-01T14:11:15.786Z",
+              "EditorCaption": ""
             }
           ]
         }

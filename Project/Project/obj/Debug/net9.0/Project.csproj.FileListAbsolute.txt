@@ -144,7 +144,6 @@ D:\My Obsidian\My_Life\Courses\ITI DOT NET\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\Proje
 D:\My Obsidian\My_Life\Courses\ITI DOT NET\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\Project\Project\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\My Obsidian\My_Life\Courses\ITI DOT NET\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\Project\Project\obj\Debug\net9.0\scopedcss\bundle\Project.styles.css
 D:\My Obsidian\My_Life\Courses\ITI DOT NET\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\Project\Project\obj\Debug\net9.0\scopedcss\projectbundle\Project.bundle.scp.css
-D:\My Obsidian\My_Life\Courses\ITI DOT NET\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\Project\Project\obj\Debug\net9.0\compressed\ydb8vxti1i-b9sayid5wm.gz
 D:\My Obsidian\My_Life\Courses\ITI DOT NET\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\Project\Project\obj\Debug\net9.0\compressed\ir86nxngkb-61n19gt1b8.gz
 D:\My Obsidian\My_Life\Courses\ITI DOT NET\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\Project\Project\obj\Debug\net9.0\compressed\pny6gljfzy-xtxxf3hu2r.gz
 D:\My Obsidian\My_Life\Courses\ITI DOT NET\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\Project\Project\obj\Debug\net9.0\compressed\h5kjrugxa6-bqjiyaj88i.gz
@@ -336,3 +335,4 @@ D:\My Obsidian\My_Life\Courses\ITI DOT NET\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\Proje
 D:\My Obsidian\My_Life\Courses\ITI DOT NET\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\Project\Project\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Scripting.resources.dll
 D:\My Obsidian\My_Life\Courses\ITI DOT NET\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\Project\Project\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll
 D:\My Obsidian\My_Life\Courses\ITI DOT NET\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\Project\Project\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\My Obsidian\My_Life\Courses\ITI DOT NET\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\Project\Project\obj\Debug\net9.0\compressed\ydb8vxti1i-1ykejxl7fh.gz
