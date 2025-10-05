@@ -1,14 +1,19 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Project.Models;
 using Project.Repositories.Interfaces;
+using X.PagedList;
+using X.PagedList.Extensions;
 
 namespace Project.Controllers
 {
+    // Only users in the "Admin" or "HR" roles can access this controller.
+    [Authorize(Roles = "Admin,HR")]
     public class InstructorsController : Controller
     {
         private readonly IInstructorRepository _instructorRepository;
-        private readonly IDepartmentRepository _departmentRepository; // Needed for dropdowns
+        private readonly IDepartmentRepository _departmentRepository;
 
         public InstructorsController(IInstructorRepository instructorRepository, IDepartmentRepository departmentRepository)
         {
@@ -17,17 +22,47 @@ namespace Project.Controllers
         }
 
         // GET: Instructors
-        public IActionResult Index(string searchString)
+        public IActionResult Index(string searchString, string sortOrder, int? page)
         {
-            var instructors = _instructorRepository.GetAll();
+            ViewData["CurrentFilter"] = searchString;
+            ViewData["NameSortParm"] = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["DeptSortParm"] = sortOrder == "Dept" ? "dept_desc" : "Dept";
+
+            var instructors = _instructorRepository.GetAll(); // Includes Department data
+
+            // Filtering
             if (!string.IsNullOrEmpty(searchString))
             {
                 instructors = instructors.Where(i =>
                     i.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase) ||
                     (i.Department != null && i.Department.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase)));
             }
-            return View(instructors.ToList());
+
+            // Sorting
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    instructors = instructors.OrderByDescending(i => i.Name);
+                    break;
+                case "Dept":
+                    instructors = instructors.OrderBy(i => i.Department.Name);
+                    break;
+                case "dept_desc":
+                    instructors = instructors.OrderByDescending(i => i.Department.Name);
+                    break;
+                default:
+                    instructors = instructors.OrderBy(i => i.Name);
+                    break;
+            }
+
+            // Pagination
+            int pageSize = 5;
+            int pageNumber = (page ?? 1);
+            return View(instructors.ToPagedList(pageNumber, pageSize));
         }
+
+        // Details, Create, Edit, Delete actions follow the same pattern as DepartmentsController...
+        // ... ensuring to populate ViewData["DeptId"] for Create/Edit dropdowns.
 
         // GET: Instructors/Details/5
         public IActionResult Details(int? id)

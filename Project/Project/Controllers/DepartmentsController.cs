@@ -1,13 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Project.Models;
 using Project.Repositories.Interfaces;
+using X.PagedList;
+using X.PagedList.Extensions;
 
 namespace Project.Controllers
 {
+    // Only users in the "Admin" role can access this controller.
+    [Authorize(Roles = "Admin")]
     public class DepartmentsController : Controller
     {
-        // Dependency Injection: Injecting the repository interface, not a concrete class or DbContext.
-        // This makes the controller testable and decoupled from the data access logic.
         private readonly IDepartmentRepository _departmentRepository;
 
         public DepartmentsController(IDepartmentRepository departmentRepository)
@@ -16,16 +19,43 @@ namespace Project.Controllers
         }
 
         // GET: Departments
-        public IActionResult Index(string searchString)
+        public IActionResult Index(string searchString, string sortOrder, int? page)
         {
+            ViewData["CurrentFilter"] = searchString;
+            ViewData["NameSortParm"] = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["ManagerSortParm"] = sortOrder == "Manager" ? "manager_desc" : "Manager";
+
             var departments = _departmentRepository.GetAll();
+
+            // Filtering
             if (!string.IsNullOrEmpty(searchString))
             {
                 departments = departments.Where(d =>
                     d.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase) ||
                     d.ManagerName.Contains(searchString, StringComparison.OrdinalIgnoreCase));
             }
-            return View(departments.ToList());
+
+            // Sorting
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    departments = departments.OrderByDescending(d => d.Name);
+                    break;
+                case "Manager":
+                    departments = departments.OrderBy(d => d.ManagerName);
+                    break;
+                case "manager_desc":
+                    departments = departments.OrderByDescending(d => d.ManagerName);
+                    break;
+                default:
+                    departments = departments.OrderBy(d => d.Name);
+                    break;
+            }
+
+            // Pagination
+            int pageSize = 5; // Show 5 items per page
+            int pageNumber = (page ?? 1);
+            return View(departments.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: Departments/Details/5
@@ -70,7 +100,6 @@ namespace Project.Controllers
         public IActionResult Edit(int id, [Bind("Id,Name,ManagerName")] Department department)
         {
             if (id != department.Id) return NotFound();
-
             if (ModelState.IsValid)
             {
                 _departmentRepository.Update(department);

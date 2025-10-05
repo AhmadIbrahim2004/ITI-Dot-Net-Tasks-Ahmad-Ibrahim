@@ -1,14 +1,18 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Project.Models;
 
 namespace Project.Data
-{ 
-    public class ApplicationDbContext : DbContext
+{
+    // This class is now the single source for both your application data and Identity data.
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+            : base(options)
         {
         }
 
+        // Your application's domain models
         public DbSet<Department> Departments { get; set; }
         public DbSet<Instructor> Instructors { get; set; }
         public DbSet<Student> Students { get; set; }
@@ -17,25 +21,30 @@ namespace Project.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // This line is CRUCIAL. It configures the schema needed for the Identity framework.
+            // It must be called before your custom configurations.
             base.OnModelCreating(modelBuilder);
 
-            // Configure the composite primary key for the CourseStudent junction table
+            // --- Your Custom Model Configuration ---
+
+            // Configure the composite primary key for the junction table
             modelBuilder.Entity<CourseStudent>()
                 .HasKey(cs => new { cs.CrsId, cs.StdId });
 
-            // FIX #1: This prevents the first cascade error between Course and Department
+            // Configure relationships to prevent cascade delete cycles, which SQL Server forbids.
+            // Using .OnDelete(DeleteBehavior.Restrict) is a safe way to prevent deletion
+            // if related entities exist.
             modelBuilder.Entity<Course>()
                 .HasOne(c => c.Department)
                 .WithMany(d => d.Courses)
                 .HasForeignKey(c => c.DeptId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Restrict);
 
-            // FIX #2: This prevents the new cascade error on the CourseStudents table
             modelBuilder.Entity<CourseStudent>()
                 .HasOne(cs => cs.Student)
                 .WithMany(s => s.CourseStudents)
                 .HasForeignKey(cs => cs.StdId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

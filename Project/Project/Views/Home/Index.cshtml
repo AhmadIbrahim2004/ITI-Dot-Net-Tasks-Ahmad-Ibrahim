@@ -1,8 +1,74 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+
+@{
+    ViewData["Title"] = "Dashboard";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <h1 class="display-4">Welcome back, @User.Identity?.Name!</h1>
+        <p class="lead">This is your University Portal Dashboard.</p>
+    }
+    else
+    {
+        <h1 class="display-4">Welcome to the University Portal</h1>
+        <p class="lead">The central hub for managing students, courses, and more.</p>
+        <p>Please <a asp-area="Identity" asp-page="/Account/Login">log in</a> to access your dashboard.</p>
+    }
+</div>
+
+<hr class="my-4" />
+
+@* A simple dashboard card layout *@
+<div class="row text-center">
+    <div class="col-md-4">
+        <div class="card shadow-sm mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Manage Departments</h5>
+                <p class="card-text">Oversee all academic departments and their managers.</p>
+                @if (User.IsInRole("Admin"))
+                {
+                    <a asp-controller="Departments" asp-action="Index" class="btn btn-primary">Go to Departments</a>
+                }
+                else
+                {
+                    <a href="#" class="btn btn-secondary disabled">Requires Admin Role</a>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card shadow-sm mb-3">
+            <div class="card-body">
+                <h5 class="card-title">View Instructors</h5>
+                <p class="card-text">Browse and manage instructor profiles and assignments.</p>
+                @if (User.IsInRole("Admin") || User.IsInRole("HR"))
+                {
+                    <a asp-controller="Instructors" asp-action="Index" class="btn btn-primary">Go to Instructors</a>
+                }
+                else
+                {
+                    <a href="#" class="btn btn-secondary disabled">Requires Admin/HR Role</a>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card shadow-sm mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Explore Courses</h5>
+                <p class="card-text">View the course catalog and student enrollments.</p>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <a asp-controller="Courses" asp-action="Index" class="btn btn-primary">Go to Courses</a>
+                }
+                else
+                {
+                    <a href="#" class="btn btn-secondary disabled">Login Required</a>
+                }
+            </div>
+        </div>
+    </div>
 </div>
