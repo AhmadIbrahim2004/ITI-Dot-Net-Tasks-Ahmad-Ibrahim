@@ -127,7 +127,7 @@ namespace Project.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<decimal>("Salary")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18, 2)");
 
                     b.HasKey("Id");
 

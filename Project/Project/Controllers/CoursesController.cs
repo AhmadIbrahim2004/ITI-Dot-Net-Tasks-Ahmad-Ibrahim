@@ -1,174 +1,122 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using Project.Data;
 using Project.Models;
+using Project.Repositories.Interfaces;
 
 namespace Project.Controllers
 {
     public class CoursesController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly ICourseRepository _courseRepository;
+        private readonly IDepartmentRepository _departmentRepository;
+        private readonly IInstructorRepository _instructorRepository;
 
-        public CoursesController(ApplicationDbContext context)
+        public CoursesController(ICourseRepository courseRepository, IDepartmentRepository departmentRepository, IInstructorRepository instructorRepository)
         {
-            _context = context;
+            _courseRepository = courseRepository;
+            _departmentRepository = departmentRepository;
+            _instructorRepository = instructorRepository;
         }
 
         // GET: Courses
-        public async Task<IActionResult> Index(string searchString)
+        public IActionResult Index(string searchString)
         {
-            ViewData["CurrentFilter"] = searchString;
-            var courses = from c in _context.Courses.Include(c => c.Department).Include(c => c.Instructor)
-                          select c;
-
-            if (!String.IsNullOrEmpty(searchString))
+            var courses = _courseRepository.GetAll();
+            if (!string.IsNullOrEmpty(searchString))
             {
-                courses = courses.Where(c => c.Name.Contains(searchString));
+                courses = courses.Where(c => c.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase));
             }
+            return View(courses.ToList());
+        }
 
-            return View(await courses.AsNoTracking().ToListAsync());
+        // --- Action for State Management (Session) ---
+        public IActionResult Join(int id)
+        {
+            // Store the selected course ID in the session
+            HttpContext.Session.SetInt32("SelectedCourseId", id);
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Courses/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public IActionResult Details(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var course = await _context.Courses
-                .Include(c => c.Department)
-                .Include(c => c.Instructor)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (course == null)
-            {
-                return NotFound();
-            }
-
+            if (id == null) return NotFound();
+            var course = _courseRepository.GetById(id.Value);
+            if (course == null) return NotFound();
             return View(course);
         }
 
         // GET: Courses/Create
         public IActionResult Create()
         {
-            ViewData["DeptId"] = new SelectList(_context.Departments, "Id", "Name");
-            ViewData["InstructorId"] = new SelectList(_context.Instructors, "Id", "Name");
+            ViewData["DeptId"] = new SelectList(_departmentRepository.GetAll(), "Id", "Name");
+            ViewData["InstructorId"] = new SelectList(_instructorRepository.GetAll(), "Id", "Name");
             return View();
         }
 
-        // POST: Courses/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Degree,MinimumDegree,Hours,DeptId,InstructorId")] Course course)
+        public IActionResult Create([Bind("Id,Name,Degree,MinimumDegree,Hours,DeptId,InstructorId")] Course course)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(course);
-                await _context.SaveChangesAsync();
+                _courseRepository.Add(course);
+                _courseRepository.Save();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DeptId"] = new SelectList(_context.Departments, "Id", "Name", course.DeptId);
-            ViewData["InstructorId"] = new SelectList(_context.Instructors, "Id", "Name", course.InstructorId);
+            ViewData["DeptId"] = new SelectList(_departmentRepository.GetAll(), "Id", "Name", course.DeptId);
+            ViewData["InstructorId"] = new SelectList(_instructorRepository.GetAll(), "Id", "Name", course.InstructorId);
             return View(course);
         }
 
         // GET: Courses/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public IActionResult Edit(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var course = await _context.Courses.FindAsync(id);
-            if (course == null)
-            {
-                return NotFound();
-            }
-            ViewData["DeptId"] = new SelectList(_context.Departments, "Id", "Name", course.DeptId);
-            ViewData["InstructorId"] = new SelectList(_context.Instructors, "Id", "Name", course.InstructorId);
+            if (id == null) return NotFound();
+            var course = _courseRepository.GetById(id.Value);
+            if (course == null) return NotFound();
+            ViewData["DeptId"] = new SelectList(_departmentRepository.GetAll(), "Id", "Name", course.DeptId);
+            ViewData["InstructorId"] = new SelectList(_instructorRepository.GetAll(), "Id", "Name", course.InstructorId);
             return View(course);
         }
 
-        // POST: Courses/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Degree,MinimumDegree,Hours,DeptId,InstructorId")] Course course)
+        public IActionResult Edit(int id, [Bind("Id,Name,Degree,MinimumDegree,Hours,DeptId,InstructorId")] Course course)
         {
-            if (id != course.Id)
-            {
-                return NotFound();
-            }
+            if (id != course.Id) return NotFound();
 
             if (ModelState.IsValid)
             {
-                try
-                {
-                    _context.Update(course);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!CourseExists(course.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+                _courseRepository.Update(course);
+                _courseRepository.Save();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DeptId"] = new SelectList(_context.Departments, "Id", "Name", course.DeptId);
-            ViewData["InstructorId"] = new SelectList(_context.Instructors, "Id", "Name", course.InstructorId);
+            ViewData["DeptId"] = new SelectList(_departmentRepository.GetAll(), "Id", "Name", course.DeptId);
+            ViewData["InstructorId"] = new SelectList(_instructorRepository.GetAll(), "Id", "Name", course.InstructorId);
             return View(course);
         }
 
         // GET: Courses/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public IActionResult Delete(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var course = await _context.Courses
-                .Include(c => c.Department)
-                .Include(c => c.Instructor)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (course == null)
-            {
-                return NotFound();
-            }
-
+            if (id == null) return NotFound();
+            var course = _courseRepository.GetById(id.Value);
+            if (course == null) return NotFound();
             return View(course);
         }
 
-        // POST: Courses/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public IActionResult DeleteConfirmed(int id)
         {
-            var course = await _context.Courses.FindAsync(id);
+            var course = _courseRepository.GetById(id);
             if (course != null)
             {
-                _context.Courses.Remove(course);
+                _courseRepository.Delete(course);
+                _courseRepository.Save();
             }
-
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
-        }
-
-        private bool CourseExists(int id)
-        {
-            return _context.Courses.Any(e => e.Id == id);
         }
     }
 }

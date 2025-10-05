@@ -1,55 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using Project.Data;
+﻿using Microsoft.AspNetCore.Mvc;
 using Project.Models;
+using Project.Repositories.Interfaces;
 
 namespace Project.Controllers
 {
     public class DepartmentsController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        // Dependency Injection: Injecting the repository interface, not a concrete class or DbContext.
+        // This makes the controller testable and decoupled from the data access logic.
+        private readonly IDepartmentRepository _departmentRepository;
 
-        public DepartmentsController(ApplicationDbContext context)
+        public DepartmentsController(IDepartmentRepository departmentRepository)
         {
-            _context = context;
+            _departmentRepository = departmentRepository;
         }
 
         // GET: Departments
-        public async Task<IActionResult> Index(string searchString)
+        public IActionResult Index(string searchString)
         {
-            ViewData["CurrentFilter"] = searchString;
-            var departments = from d in _context.Departments
-                              select d;
-
-            if (!String.IsNullOrEmpty(searchString))
+            var departments = _departmentRepository.GetAll();
+            if (!string.IsNullOrEmpty(searchString))
             {
-                departments = departments.Where(d => d.Name.Contains(searchString)
-                                               || d.ManagerName.Contains(searchString));
+                departments = departments.Where(d =>
+                    d.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase) ||
+                    d.ManagerName.Contains(searchString, StringComparison.OrdinalIgnoreCase));
             }
-
-            return View(await departments.AsNoTracking().ToListAsync());
+            return View(departments.ToList());
         }
 
         // GET: Departments/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public IActionResult Details(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var department = await _context.Departments
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (department == null)
-            {
-                return NotFound();
-            }
-
+            if (id == null) return NotFound();
+            var department = _departmentRepository.GetById(id.Value);
+            if (department == null) return NotFound();
             return View(department);
         }
 
@@ -59,105 +43,63 @@ namespace Project.Controllers
             return View();
         }
 
-        // POST: Departments/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,ManagerName")] Department department)
+        public IActionResult Create([Bind("Id,Name,ManagerName")] Department department)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(department);
-                await _context.SaveChangesAsync();
+                _departmentRepository.Add(department);
+                _departmentRepository.Save();
                 return RedirectToAction(nameof(Index));
             }
             return View(department);
         }
 
         // GET: Departments/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public IActionResult Edit(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var department = await _context.Departments.FindAsync(id);
-            if (department == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
+            var department = _departmentRepository.GetById(id.Value);
+            if (department == null) return NotFound();
             return View(department);
         }
 
-        // POST: Departments/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,ManagerName")] Department department)
+        public IActionResult Edit(int id, [Bind("Id,Name,ManagerName")] Department department)
         {
-            if (id != department.Id)
-            {
-                return NotFound();
-            }
+            if (id != department.Id) return NotFound();
 
             if (ModelState.IsValid)
             {
-                try
-                {
-                    _context.Update(department);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!DepartmentExists(department.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+                _departmentRepository.Update(department);
+                _departmentRepository.Save();
                 return RedirectToAction(nameof(Index));
             }
             return View(department);
         }
 
         // GET: Departments/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public IActionResult Delete(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var department = await _context.Departments
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (department == null)
-            {
-                return NotFound();
-            }
-
+            if (id == null) return NotFound();
+            var department = _departmentRepository.GetById(id.Value);
+            if (department == null) return NotFound();
             return View(department);
         }
 
-        // POST: Departments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public IActionResult DeleteConfirmed(int id)
         {
-            var department = await _context.Departments.FindAsync(id);
+            var department = _departmentRepository.GetById(id);
             if (department != null)
             {
-                _context.Departments.Remove(department);
+                _departmentRepository.Delete(department);
+                _departmentRepository.Save();
             }
-
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
-        }
-
-        private bool DepartmentExists(int id)
-        {
-            return _context.Departments.Any(e => e.Id == id);
         }
     }
 }

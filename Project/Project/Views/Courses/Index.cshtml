@@ -2,39 +2,36 @@
 
 @{
     ViewData["Title"] = "Courses";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    // Get the ID of the joined course from the session, if it exists.
+    var selectedCourseId = Context.Session.GetInt32("SelectedCourseId");
 }
 
 <h1>Courses</h1>
+<hr />
 
 <p>
-    <a asp-action="Create" class="btn btn-primary">Create New</a>
+    <a asp-action="Create" class="btn btn-primary btn-glow">Create New</a>
 </p>
 
-<form asp-action="Index" method="get">
-    <div class="form-actions no-color">
-        <p>
-            Find by name: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
-            <input type="submit" value="Search" class="btn btn-sm btn-secondary" /> |
-            <a asp-action="Index">Back to Full List</a>
-        </p>
+<!-- Search Form -->
+<form asp-action="Index" method="get" class="mb-4">
+    <div class="input-group">
+        <input type="text" name="searchString" class="form-control" placeholder="Find by course name...">
+        <button type="submit" class="btn btn-outline-primary">Search</button>
+        <a asp-action="Index" class="btn btn-outline-secondary">Back to Full List</a>
     </div>
 </form>
 
-<table class="table">
+<table class="table table-hover">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Degree)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Department)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Instructor)
-            </th>
+            <th>Name</th>
+            <th>Degree</th>
+            <th>Min. Degree</th>
+            <th>Department</th>
+            <th>Instructor</th>
+            <th>Status</th> <!-- New Column for Join Status -->
             <th></th>
         </tr>
     </thead>
@@ -42,17 +39,21 @@
         @foreach (var item in Model)
         {
             <tr>
+                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.Degree)</td>
+                <td>@Html.DisplayFor(modelItem => item.MinimumDegree)</td>
+                <td>@Html.DisplayFor(modelItem => item.Department.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.Instructor.Name)</td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Degree)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Department.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Instructor.Name)
+                    @* This is the logic to check the session *@
+                    @if (selectedCourseId.HasValue && selectedCourseId.Value == item.Id)
+                    {
+                        <span class="badge bg-success">Joined</span>
+                    }
+                    else
+                    {
+                        <a asp-action="Join" asp-route-id="@item.Id" class="btn btn-sm btn-outline-success">Join</a>
+                    }
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
@@ -63,3 +64,4 @@
         }
     </tbody>
 </table>
+

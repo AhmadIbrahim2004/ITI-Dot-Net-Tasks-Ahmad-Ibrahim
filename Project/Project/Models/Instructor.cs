@@ -14,6 +14,7 @@ namespace Project.Models
         [Required]
         [Range(5000, 50000, ErrorMessage = "Salary must be between 5000 and 50000.")]
         [DataType(DataType.Currency)]
+        [Column(TypeName = "decimal(18, 2)")] // This line fixes the database warning
         public decimal Salary { get; set; }
 
         [Required]

@@ -1,14 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\",
+  "WorkspaceRootPath": "D:\\My Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|d:\\my obsidian\\my_life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\project\\project\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|d:\\my life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\project\\project\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|solutionrelative:project\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|d:\\my life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\project\\project\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|solutionrelative:project\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|d:\\my obsidian\\my_life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\project\\project\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|solutionrelative:project\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|d:\\my life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\project\\project\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|solutionrelative:project\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|d:\\my life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\project\\project\\filters\\authorizestudentfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|solutionrelative:project\\filters\\authorizestudentfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|d:\\my life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\project\\project\\views\\courses\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|solutionrelative:project\\views\\courses\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,29 +38,65 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "site.css",
-              "DocumentMoniker": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\wwwroot\\css\\site.css",
+              "DocumentMoniker": "D:\\My Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "Project\\wwwroot\\css\\site.css",
-              "ToolTip": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "Project\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAJIAAAAAAAAAAAAswLUAAAAAAAAAAAAAAA==",
+              "ToolTip": "D:\\My Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\wwwroot\\css\\site.css*",
+              "RelativeToolTip": "Project\\wwwroot\\css\\site.css*",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAiwIwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-10-01T14:11:44.916Z",
+              "WhenOpened": "2025-10-05T19:31:17.608Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Views\\Shared\\_Layout.cshtml",
+              "DocumentMoniker": "D:\\My Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Project\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\My Obsidian\\My_Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Project\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAwEUAAAAAAAAAAAAAAA==",
+              "ToolTip": "D:\\My Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Views\\Shared\\_Layout.cshtml*",
+              "RelativeToolTip": "Project\\Views\\Shared\\_Layout.cshtml*",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAswFkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-01T14:11:15.786Z",
+              "WhenOpened": "2025-10-05T19:26:47.204Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\My Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Project\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\My Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Project\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAswC8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T19:25:45.676Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthorizeStudentFilter.cs",
+              "DocumentMoniker": "D:\\My Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Filters\\AuthorizeStudentFilter.cs",
+              "RelativeDocumentMoniker": "Project\\Filters\\AuthorizeStudentFilter.cs",
+              "ToolTip": "D:\\My Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Filters\\AuthorizeStudentFilter.cs",
+              "RelativeToolTip": "Project\\Filters\\AuthorizeStudentFilter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T19:23:23.338Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\My Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Views\\Courses\\Index.cshtml",
+              "RelativeDocumentMoniker": "Project\\Views\\Courses\\Index.cshtml",
+              "ToolTip": "D:\\My Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Views\\Courses\\Index.cshtml",
+              "RelativeToolTip": "Project\\Views\\Courses\\Index.cshtml",
+              "ViewState": "AgIAACgAAAAAAAAAAAAswEMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-05T19:14:32.483Z"
             }
           ]
         }
