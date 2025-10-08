@@ -1,10 +1,11 @@
 ﻿@using X.PagedList.Mvc.Core
 @using X.PagedList
+@using Project.Controllers
 @model IPagedList<Project.Models.Course>
 
 @{
     ViewData["Title"] = "Courses";
-    var selectedCourseId = Context.Session.GetInt32("SelectedCourseId");
+    var joinedCourseIds = Context.Session.Get<List<int>>("JoinedCourses") ?? new List<int>();
 }
 
 <h1>Courses</h1>
@@ -32,8 +33,7 @@
             <th>Name</th>
             <th>Department</th>
             <th>Instructor</th>
-            @* --- HIDE "STATUS" COLUMN FROM NON-STUDENTS --- *@
-            @if (User.IsInRole("Student"))
+            @if (User.Identity.IsAuthenticated && !User.IsInRole("Admin") && !User.IsInRole("HR") && !User.IsInRole("Instructor"))
             {
                 <th>Status</th>
             }
@@ -48,13 +48,12 @@
                 <td>@Html.DisplayFor(modelItem => item.Department.Name)</td>
                 <td>@Html.DisplayFor(modelItem => item.Instructor.Name)</td>
 
-                @* --- ONLY SHOW THE JOIN LOGIC FOR STUDENTS --- *@
-                @if (User.IsInRole("Student"))
+                @if (User.Identity.IsAuthenticated && !User.IsInRole("Admin") && !User.IsInRole("HR") && !User.IsInRole("Instructor"))
                 {
                     <td>
-                        @if (selectedCourseId.HasValue && selectedCourseId.Value == item.Id)
+                        @if (joinedCourseIds.Contains(item.Id))
                         {
-                            <span class="badge bg-success">Joined</span>
+                            <a asp-action="Leave" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Leave</a>
                         }
                         else
                         {
