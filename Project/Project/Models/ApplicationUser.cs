@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 
 namespace Project.Models
 {
@@ -6,9 +7,15 @@ namespace Project.Models
     // This class represents a user in your system.
     public class ApplicationUser : IdentityUser
     {
-        // You can add custom properties here in the future if you want.
-        // For example:
-        // public string? FirstName { get; set; }
-        // public string? LastName { get; set; }
+        // --- ADD THESE PROPERTIES ---
+        [Required]
+        [StringLength(50)]
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
     }
 }

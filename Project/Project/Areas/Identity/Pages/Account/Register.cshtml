@@ -11,21 +11,48 @@
             <div class="card-body">
                 <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-floating mb-3">
+                                <input asp-for="Input.FirstName" class="form-control" autocomplete="given-name" aria-required="true" placeholder="First Name" />
+                                <label asp-for="Input.FirstName"></label>
+                                <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating mb-3">
+                                <input asp-for="Input.LastName" class="form-control" autocomplete="family-name" aria-required="true" placeholder="Last Name" />
+                                <label asp-for="Input.LastName"></label>
+                                <span asp-validation-for="Input.LastName" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="form-floating mb-3">
                         <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
-                        <label asp-for="Input.Email">Email</label>
+                        <label asp-for="Input.Email"></label>
                         <span asp-validation-for="Input.Email" class="text-danger"></span>
                     </div>
                     <div class="form-floating mb-3">
                         <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
-                        <label asp-for="Input.Password">Password</label>
+                        <label asp-for="Input.Password"></label>
                         <span asp-validation-for="Input.Password" class="text-danger"></span>
                     </div>
                     <div class="form-floating mb-3">
                         <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
-                        <label asp-for="Input.ConfirmPassword">Confirm Password</label>
+                        <label asp-for="Input.ConfirmPassword"></label>
                         <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
                     </div>
+
+                    @* --- NEW "SHOW PASSWORD" CHECKBOX --- *@
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" onclick="togglePasswordVisibility()">
+                        <label class="form-check-label">
+                            Show Password
+                        </label>
+                    </div>
+
                     <div class="mt-4 mb-0 d-grid">
                         <button id="registerSubmit" type="submit" class="w-100 btn btn-primary btn-lg">Register</button>
                     </div>
@@ -42,4 +69,25 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+
+    @* --- NEW JAVASCRIPT LOGIC --- *@
+    <script>
+        function togglePasswordVisibility() {
+            // Get the two password input fields
+            var passwordField = document.getElementById("Input_Password");
+            var confirmPasswordField = document.getElementById("Input_ConfirmPassword");
+
+            // Check the current type of the input field
+            if (passwordField.type === "password") {
+                // If it's a password, change it to text
+                passwordField.type = "text";
+                confirmPasswordField.type = "text";
+            } else {
+                // If it's text, change it back to password
+                passwordField.type = "password";
+                confirmPasswordField.type = "password";
+            }
+        }
+    </script>
 }
+

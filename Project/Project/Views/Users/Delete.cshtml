@@ -1,0 +1,36 @@
+﻿@model Project.Models.ApplicationUser
+
+@{
+    ViewData["Title"] = "Delete User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <h1 class="text-danger">Delete User</h1>
+    <h3>Are you sure you want to permanently delete this user?</h3>
+    <hr />
+
+    <div class="card bg-light p-3">
+        <dl class="row">
+            <dt class="col-sm-3">
+                Username
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.UserName)
+            </dd>
+            <dt class="col-sm-3">
+                Email
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+        </dl>
+    </div>
+
+    <form asp-action="Delete" class="mt-4">
+        @* This hidden input is crucial to tell the controller which user to delete *@
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </form>
+</div>

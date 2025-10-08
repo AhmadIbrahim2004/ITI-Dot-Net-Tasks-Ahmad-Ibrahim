@@ -21,14 +21,12 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 // --- Identity Services Setup ---
-// This adds the user and role management system.
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultUI()
     .AddDefaultTokenProviders();
 
 // --- Repository Dependency Injection ---
-// This tells the application how to create our custom repositories.
 builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
 builder.Services.AddScoped<IInstructorRepository, InstructorRepository>();
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();
@@ -63,7 +61,6 @@ app.UseStaticFiles();
 app.UseRouting();
 
 // --- Authentication & Authorization Middleware ---
-// These must be in this order and after UseRouting but before Map... calls.
 app.UseAuthentication();
 app.UseAuthorization();
 
@@ -77,7 +74,6 @@ app.MapControllerRoute(
 app.MapRazorPages(); // Required for Identity UI pages
 
 // --- Role and User Seeding ---
-// This will automatically create roles and the first admin user on startup.
 using (var scope = app.Services.CreateScope())
 {
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
@@ -92,20 +88,25 @@ using (var scope = app.Services.CreateScope())
         }
     }
 
-    var adminUser = await userManager.FindByEmailAsync("admin@university.com");
+    // --- THIS IS THE CORRECTED LOGIC ---
+    var adminEmail = "admin@gmail.com";
+
+    // 1. Check for the NEW email address
+    var adminUser = await userManager.FindByEmailAsync(adminEmail);
     if (adminUser == null)
     {
+        // 2. If it doesn't exist, create the user with the NEW email address
         adminUser = new ApplicationUser
         {
-            UserName = "admin@university.com",
-            Email = "admin@university.com",
-            EmailConfirmed = true // Confirm email immediately for the admin
+            UserName = adminEmail,
+            Email = adminEmail,
+            EmailConfirmed = true,
+            FirstName = "Admin",
+            LastName = "User"
         };
-        // Create the user with a password
         var result = await userManager.CreateAsync(adminUser, "Admin@123");
         if (result.Succeeded)
         {
-            // Assign the user to the "Admin" role
             await userManager.AddToRoleAsync(adminUser, "Admin");
         }
     }
