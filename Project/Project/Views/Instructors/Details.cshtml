@@ -1,25 +1,39 @@
 ﻿@model Project.Models.Instructor
+
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Instructor Details";
 }
-<h1>Details</h1>
+
 <div>
-    <h4>Instructor</h4>
+    <h4>Instructor Details</h4>
     <hr />
-    <dl class="row">
-        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Name)</dt>
-        <dd class="col-sm-10">@Html.DisplayFor(model => model.Name)</dd>
-        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Salary)</dt>
-        <dd class="col-sm-10">@Html.DisplayFor(model => model.Salary)</dd>
-        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Address)</dt>
-        <dd class="col-sm-10">@Html.DisplayFor(model => model.Address)</dd>
-        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Image)</dt>
-        <dd class="col-sm-10">@Html.DisplayFor(model => model.Image)</dd>
-        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Department)</dt>
-        <dd class="col-sm-10">@Html.DisplayFor(model => model.Department.Name)</dd>
-    </dl>
+    <div class="row">
+        <div class="col-md-4 text-center">
+            @* --- NEW IMAGE DISPLAY LOGIC --- *@
+            <img src="@Model.Image"
+                 alt="Profile Image"
+                 class="img-fluid rounded-circle mb-3"
+                 style="max-width: 200px;"
+                 onerror="this.onerror=null; this.src='https://placehold.co/200x200/f8f9fa/343a40?text=No+Image';" />
+        </div>
+        <div class="col-md-8">
+            <dl class="row">
+                <dt class="col-sm-3">Name</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Name)</dd>
+
+                <dt class="col-sm-3">Salary</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Salary)</dd>
+
+                <dt class="col-sm-3">Address</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Address)</dd>
+
+                <dt class="col-sm-3">Department</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Department.Name)</dd>
+            </dl>
+        </div>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<div class="mt-4">
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
 </div>

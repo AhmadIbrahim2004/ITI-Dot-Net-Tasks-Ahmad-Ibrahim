@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\My Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|d:\\my life\\courses\\iti dot net\\iti-dot-net-tasks-ahmad-ibrahim\\project\\project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{658A4D8F-DA39-4791-91B1-A5830D2DFCA2}|Project\\Project.csproj|solutionrelative:project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,24 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\My Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Program.cs",
-              "RelativeDocumentMoniker": "Project\\Program.cs",
-              "ToolTip": "D:\\My Life\\Courses\\ITI DOT NET\\ITI-Dot-Net-Tasks-Ahmad-Ibrahim\\Project\\Project\\Program.cs",
-              "RelativeToolTip": "Project\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-08T10:55:10.383Z",
-              "EditorCaption": ""
             }
           ]
         }

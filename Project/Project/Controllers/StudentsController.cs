@@ -1,57 +1,87 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Project.Filters; // Import the filter namespace
+using Microsoft.EntityFrameworkCore;
 using Project.Models;
 using Project.Repositories.Interfaces;
+using X.PagedList;
+using X.PagedList.Extensions;
 
 namespace Project.Controllers
 {
-    // Applying the custom filter to ensure a user is "logged in" to access student pages.
-    [AuthorizeStudentFilter]
+    [Authorize(Roles = "Admin,HR,Instructor")]
     public class StudentsController : Controller
     {
         private readonly IStudentRepository _studentRepository;
-        private readonly IDepartmentRepository _departmentRepository; // Needed for the department dropdown
+        private readonly IDepartmentRepository _departmentRepository;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public StudentsController(IStudentRepository studentRepository, IDepartmentRepository departmentRepository)
+        public StudentsController(
+            IStudentRepository studentRepository,
+            IDepartmentRepository departmentRepository,
+            UserManager<ApplicationUser> userManager)
         {
             _studentRepository = studentRepository;
             _departmentRepository = departmentRepository;
+            _userManager = userManager;
         }
 
-        // GET: Students
-        public IActionResult Index(string searchString)
+        public IActionResult Index(string searchString, string sortOrder, int? page)
         {
-            var students = _studentRepository.GetAll();
+            ViewData["CurrentFilter"] = searchString;
+            ViewData["NameSortParm"] = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["DeptSortParm"] = sortOrder == "Dept" ? "dept_desc" : "Dept";
+
+            // --- THIS IS THE CRUCIAL FIX ---
+            // We convert the IEnumerable to an IQueryable so that ToPagedList() can find it.
+            var students = _studentRepository.GetAll().AsQueryable();
+
             if (!string.IsNullOrEmpty(searchString))
             {
                 students = students.Where(s =>
                     s.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase) ||
                     (s.Department != null && s.Department.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase)));
             }
-            return View(students.ToList());
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    students = students.OrderByDescending(s => s.Name);
+                    break;
+                case "Dept":
+                    students = students.OrderBy(s => s.Department.Name);
+                    break;
+                case "dept_desc":
+                    students = students.OrderByDescending(s => s.Department.Name);
+                    break;
+                default:
+                    students = students.OrderBy(s => s.Name);
+                    break;
+            }
+
+            int pageSize = 5;
+            int pageNumber = (page ?? 1);
+            return View(students.ToPagedList(pageNumber, pageSize));
         }
 
-        // GET: Students/Details/5
-        public IActionResult Details(int? id)
-        {
-            if (id == null) return NotFound();
-            var student = _studentRepository.GetById(id.Value);
-            if (student == null) return NotFound();
-            return View(student);
-        }
+        // ... all other actions remain the same ...
 
-        // GET: Students/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            // Provide a list of departments for the dropdown
+            var assignedUserIds = _studentRepository.GetAll().Select(s => s.ApplicationUserId).ToList();
+            var availableUsers = await _userManager.Users
+                .Where(u => !assignedUserIds.Contains(u.Id))
+                .ToListAsync();
+
+            ViewData["ApplicationUserId"] = new SelectList(availableUsers, "Id", "UserName");
             ViewData["DeptId"] = new SelectList(_departmentRepository.GetAll(), "Id", "Name");
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("Id,Name,Image,Address,Grade,DeptId")] Student student)
+        public IActionResult Create([Bind("Id,Name,Image,Address,Grade,DeptId,ApplicationUserId")] Student student)
         {
             if (ModelState.IsValid)
             {
@@ -63,7 +93,14 @@ namespace Project.Controllers
             return View(student);
         }
 
-        // GET: Students/Edit/5
+        public IActionResult Details(int? id)
+        {
+            if (id == null) return NotFound();
+            var student = _studentRepository.GetById(id.Value);
+            if (student == null) return NotFound();
+            return View(student);
+        }
+
         public IActionResult Edit(int? id)
         {
             if (id == null) return NotFound();
@@ -75,7 +112,7 @@ namespace Project.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind("Id,Name,Image,Address,Grade,DeptId")] Student student)
+        public IActionResult Edit(int id, [Bind("Id,Name,Image,Address,Grade,DeptId,ApplicationUserId")] Student student)
         {
             if (id != student.Id) return NotFound();
 
@@ -89,7 +126,6 @@ namespace Project.Controllers
             return View(student);
         }
 
-        // GET: Students/Delete/5
         public IActionResult Delete(int? id)
         {
             if (id == null) return NotFound();

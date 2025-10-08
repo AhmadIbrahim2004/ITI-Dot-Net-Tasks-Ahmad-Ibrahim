@@ -11,7 +11,6 @@ namespace Project.Models
         [StringLength(50, MinimumLength = 3)]
         public string Name { get; set; }
 
-        [Display(Name = "Image URL")]
         [Url]
         public string? Image { get; set; }
 
@@ -19,12 +18,20 @@ namespace Project.Models
         [StringLength(100)]
         public string Address { get; set; }
 
-        [Range(0, 100, ErrorMessage = "Grade must be between 0 and 100.")]
+        [Required]
+        [Range(1, 100)]
         public int Grade { get; set; }
 
         [Display(Name = "Department")]
         [ForeignKey("Department")]
         public int DeptId { get; set; }
+
+        // --- NEW PROPERTY TO LINK TO THE USER ACCOUNT ---
+        [Display(Name = "User Account")]
+        public string? ApplicationUserId { get; set; }
+        [ForeignKey("ApplicationUserId")]
+        public virtual ApplicationUser? ApplicationUser { get; set; }
+
 
         // Navigation Properties
         public virtual Department? Department { get; set; }
